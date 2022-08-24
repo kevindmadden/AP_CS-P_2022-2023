@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca8c503-a103-4a13-a410-baee59601785" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u01_HTML-CSS/s05_MyStylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u01_HTML-CSS/s05_SecondPageWithSameCSS.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u01_HTML-CSS/s05_MultipleStyles.html" beforeDir="false" afterPath="$PROJECT_DIR$/u01_HTML-CSS/s05_MultipleStyles.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -33,6 +36,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -53,7 +57,8 @@
       <option name="presentableId" value="Default" />
       <updated>1660826754295</updated>
       <workItem from="1660826758607" duration="3290000" />
-      <workItem from="1660911197731" duration="4134000" />
+      <workItem from="1660911197731" duration="4796000" />
+      <workItem from="1661194427367" duration="4908000" />
     </task>
     <servers />
   </component>
