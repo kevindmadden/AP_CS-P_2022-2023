@@ -1,0 +1,13 @@
+p {
+    border-style: dotted;
+    padding: 10px;
+    margin: 10px;
+}
+
+.important {
+    background-color: yellow;
+}
+
+p.important {
+    font-weight: bold;
+}
