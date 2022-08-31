@@ -1,6 +1,7 @@
 .container{
     display: grid;
-    grid-template-rows: 100px 50px 100%;
+    background-color: #800c13;
+    grid-template-rows: 100px 50px minmax(200px, auto); /*100vh could also be used instead of minmax. 100vh means 100% of vertical space*/
     grid-template-columns: repeat(5, 1fr);
 }
 
