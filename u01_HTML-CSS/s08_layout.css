@@ -1,0 +1,57 @@
+.container{
+    display: grid;
+    background-color: #800c13;
+    grid-template-rows: 20px 100px 50px minmax(200px, auto); /*100vh could also be used instead of minmax. 100vh means 100% of vertical space*/
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0px;
+
+}
+
+.banner{
+    position: sticky;
+    top: 20px;
+    height:100px;
+    grid-row: 1/2;
+    grid-column: 1 / 6;
+    background-color: yellow;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+
+}
+
+.linkMenu{
+    position: sticky;
+    top: 120px;
+    height: 50px;
+    grid-row: 2/3;
+    grid-column: 1 / 6;
+    background-color: aqua;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.leftPane{
+    grid-row: 4;
+    grid-column: 1 / 2;
+    background-color: aquamarine;
+}
+
+.main{
+    grid-row: 4;
+    grid-column: 2 / 6;
+    background-color: burlywood;
+}
+
+.mainLink{
+
+}
+
+body{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+}

@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca8c503-a103-4a13-a410-baee59601785" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/u01_HTML-CSS/s08_Page1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u01_HTML-CSS/s08_Page2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u01_HTML-CSS/s08_layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u02_IntroToJavascript/s01_ASimpleJsFile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u02_IntroToJavascript/s01_TheConsole.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u02_IntroToJavascript/s02_AButton.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u99_Testing/MatterTesting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u99_Testing/MatterTesting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u99_Testing/MatterTestingMinimalEx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u99_Testing/MatterTestingMinimalEx.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u01_HTML-CSS/s07_layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/u01_HTML-CSS/s07_layout.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -34,6 +46,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/u99_Testing" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -43,6 +56,42 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Github\AP_CS-P_2022-2023\u01_HTML-CSS" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Github\AP_CS-P_2022-2023\u99_Testing" />
+      <recent name="C:\Github\AP_CS-P_2022-2023\u01_HTML-CSS" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="quick" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AP_CS-P_2022-2023" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Documents/quick.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.quick" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -57,6 +106,12 @@
       <workItem from="1660826758607" duration="3290000" />
       <workItem from="1660911197731" duration="4796000" />
       <workItem from="1661194427367" duration="10598000" />
+      <workItem from="1662556605443" duration="1545000" />
+      <workItem from="1662558322542" duration="6708000" />
+      <workItem from="1662989184022" duration="225000" />
+      <workItem from="1663073486450" duration="14873000" />
+      <workItem from="1663245947481" duration="1214000" />
+      <workItem from="1663589397445" duration="4684000" />
     </task>
     <servers />
   </component>
@@ -68,13 +123,21 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="233" y="5" key="#Project_Structure/0.0.1280.689@0.0.1280.689" timestamp="1660826764537" />
-    <state x="421" y="54" key="FileChooserDialogImpl" timestamp="1660827762240">
+    <state x="94" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1662558510778">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="54" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1660827762240" />
-    <state x="91" y="0" width="1099" height="623" key="new project wizard" timestamp="1660827769057">
+    <state x="94" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1662558510778" />
+    <state x="360" y="0" key="#quick" timestamp="1662558490326">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="91" y="0" width="1099" height="623" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1660827769057" />
+    <state x="360" y="0" key="#quick/0.0.1280.689@0.0.1280.689" timestamp="1662558490326" />
+    <state x="421" y="54" key="FileChooserDialogImpl" timestamp="1662558570261">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="421" y="54" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1662558570261" />
+    <state x="91" y="0" width="1099" height="623" key="new project wizard" timestamp="1663074127572">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="91" y="0" width="1099" height="623" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1663074127572" />
   </component>
 </project>
