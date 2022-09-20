@@ -8,14 +8,17 @@
         aSentenceAboutVariables = "This is a variable."
         console.log(aSentenceAboutVariables)
 
-        function myFirstFunction(color){
+        function setBackgroundColor(){
+            let color
+            color = document.getElementById('colorInput').value
             document.body.style.background = color
         }
         //https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_text_get
     </script>
 </head>
 <body>
-<button onClick="myFirstFunction('red')">I'm a button!</button>
+<button onClick="setBackgroundColor()">I'm a button!</button>
+<input type="text" id="colorInput" value="red">
 
 </body>
 </html>
