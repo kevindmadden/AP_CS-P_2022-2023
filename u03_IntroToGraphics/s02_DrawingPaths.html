@@ -10,6 +10,34 @@
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
 
+    ctx.beginPath()
+    ctx.moveTo(100,30)
+    ctx.lineTo(80,80)
+    ctx.lineTo(40,80)
+    ctx.lineTo(78,108)
+    ctx.lineTo(65,150)
+    ctx.lineTo(100,130)
+    ctx.lineTo(135,150)
+    ctx.lineTo(122,108)
+    ctx.lineTo(160,80)
+    ctx.lineTo(120,80)
+    ctx.closePath()
+
+    ctx.strokeStyle = "green"
+    ctx.lineWidth = 4
+    ctx.stroke()
+
+    ctx.fillStyle = 'rgb(240,7,170)'
+    ctx.fill()
+
+    ctx.moveTo(300,250)
+    ctx.arc(250, 250, 50, 0, Math.PI)
+    ctx.closePath()
+    ctx.stroke()
+
+
+
+
 
 
 
