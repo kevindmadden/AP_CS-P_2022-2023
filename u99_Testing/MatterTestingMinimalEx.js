@@ -12,10 +12,11 @@ let engine = Engine.create();
 
 let generatedRectangles = []
 
-function addRectangle(xCenterOfMass, yCenterOfMass, width, height, color = "green") {
+function addRectangle(xCenterOfMass, yCenterOfMass, width, height, color = "black", isStatic=true) {
     let rect = Bodies.rectangle(xCenterOfMass, yCenterOfMass, width, height, {
+        isStatic: isStatic,
         render: {
-            fillStyle: color
+            fillStyle: color,
         }
     })
     generatedRectangles.push(rect)
@@ -36,8 +37,8 @@ function init() {
         }
     });
 
-    addRectangle(200, 200, 20, 30)
-    addRectangle()
+    addRectangle(250, 490, 500, 20)
+    addRectangle(250, 10, 20, 50, 'green', false)
 
     let rect = Bodies.rectangle(250, 250, 10, 10, {
         render: {
@@ -46,7 +47,7 @@ function init() {
     })
 
 
-    World.add(engine.world, rect)
+    World.add(engine.world, generatedRectangles)
 
 
     //Engine.run(engine);
