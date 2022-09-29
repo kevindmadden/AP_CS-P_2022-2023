@@ -40,24 +40,13 @@ function init() {
     addRectangle(250, 490, 500, 20)
     addRectangle(250, 10, 20, 50, 'green', false)
 
-    let rect = Bodies.rectangle(250, 250, 10, 10, {
-        render: {
-            fillStyle: 'blue'
-        }
-    })
-
-
     World.add(engine.world, generatedRectangles)
 
-
-    //Engine.run(engine);
+    Engine.run(engine);
     Matter.Runner.run(engine)
-
     Render.run(render);
 
-
-
-    update();
+    update(); 
 }
 
 function update() {
