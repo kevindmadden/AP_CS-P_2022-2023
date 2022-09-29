@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca8c503-a103-4a13-a410-baee59601785" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/u01_HTML-CSS/s08_Page1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u01_HTML-CSS/s08_Page2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u01_HTML-CSS/s08_layout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u02_IntroToJavascript/s01_ASimpleJsFile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u02_IntroToJavascript/s01_TheConsole.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u02_IntroToJavascript/s02_AButton.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u99_Testing/MatterTesting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u99_Testing/MatterTesting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u99_Testing/MatterTestingMinimalEx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u99_Testing/MatterTestingMinimalEx.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/u01_HTML-CSS/s07_layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/u01_HTML-CSS/s07_layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u99_Testing/MatterTestingMinimalEx.js" beforeDir="false" afterPath="$PROJECT_DIR$/u99_Testing/MatterTestingMinimalEx.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,39 +14,39 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2DWtdK4a9jzUEXvfuqwh2MoEQEj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/u99_Testing" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Github/AP_CS-P_2022-2023/u03_IntroToGraphics"
+  }
+}]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Github\AP_CS-P_2022-2023\u03_IntroToGraphics" />
+      <recent name="C:\Github\AP_CS-P_2022-2023\u02_IntroToJavascript" />
+      <recent name="C:\Github\AP_CS-P_2022-2023\u99_Testing" />
       <recent name="C:\Github\AP_CS-P_2022-2023\u01_HTML-CSS" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Github\AP_CS-P_2022-2023\u99_Testing" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Github\AP_CS-P_2022-2023\u01_HTML-CSS" />
     </key>
   </component>
@@ -93,6 +82,7 @@
   <component name="ServiceViewManager">
     <option name="showServicesTree" value="false" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -111,12 +101,16 @@
       <workItem from="1662989184022" duration="225000" />
       <workItem from="1663073486450" duration="14873000" />
       <workItem from="1663245947481" duration="1214000" />
-      <workItem from="1663589397445" duration="4684000" />
+      <workItem from="1663589397445" duration="7805000" />
+      <workItem from="1663774324392" duration="866000" />
+      <workItem from="1663853437334" duration="541000" />
+      <workItem from="1663854542667" duration="304000" />
+      <workItem from="1663854896419" duration="15815000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="5" key="#Project_Structure" timestamp="1660826764537">
