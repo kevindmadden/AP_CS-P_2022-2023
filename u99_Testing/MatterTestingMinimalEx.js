@@ -1,7 +1,7 @@
 /*
   Properties you can change 
 */
-let showWireFrames = false //options: true, false
+let showWireFrames = false
 let Engine = Matter.Engine,
     Render = Matter.Render,
     World = Matter.World,
@@ -46,15 +46,16 @@ function init() {
     Matter.Runner.run(engine)
     Render.run(render);
 
-    update(); 
+    update();
 }
 
 function update() {
+
+
     requestAnimationFrame(update.bind(this));
 }
 
 init();
-
 $(window).resize(function () {
     init();
 })
