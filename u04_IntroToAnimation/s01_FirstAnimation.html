@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <canvas id="canvas" width="500px" height="500px" style="border: 1px solid black;" tabindex="1" autofocus></canvas>
+    <p id="coordinateValues">Coordinates - x: 0, y: 0</p>
+    <script>
+        //Canvas API: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+        const canvas = document.getElementById("canvas")
+        const ctx = canvas.getContext("2d")
+
+        /*
+            In a car driving at 60mph. You drive for two hours. How many miles did you travel?
+            60mph * 2hrs = 120 miles
+
+            You have already driven 120 miles. You speed up to 70mph and drive for another 3 hours. How many miles in total will you have traveled?
+
+            120 miles + 70mph*3hours = 330 miles
+
+            A square has an xPos of 100px. If the square is traveling at 200px/sec, where would the square be after 1 second?
+
+            100px + 100px/sec * 1 = 200px
+
+
+         */
+
+        let xPos = 100
+        let yPos = 50
+        let xVel = 40 // px/sec
+
+        let prevTimeStamp = 0
+        window.requestAnimationFrame(gameLoop)
+        function gameLoop(currentTimeStamp) {
+            let timeElapsed = (currentTimeStamp - prevTimeStamp) / 1000
+            prevTimeStamp = currentTimeStamp
+
+            ctx.clearRect(0,0,500,500)
+            console.log(currentTimeStamp)
+
+            xPos = xPos + xVel*timeElapsed
+
+            ctx.fillRect(xPos, yPos, 50, 50)
+
+
+
+
+
+            window.requestAnimationFrame(gameLoop)
+        }
+
+        //Mouse Input Stuff
+        let xCoord = 0
+        let yCoord = 0
+        function getCursorPosition(canvas, event) {
+            const rect = canvas.getBoundingClientRect()
+            xCoord = event.clientX - rect.left
+            yCoord = event.clientY - rect.top
+            document.getElementById("coordinateValues").innerHTML = "Coordinates - x: "+xCoord+", y: "+yCoord
+        }
+
+        canvas.addEventListener('mousemove', function(e) { getCursorPosition(canvas, e)})
+
+    </script>
+</head>
+<body></body>
+</html>
