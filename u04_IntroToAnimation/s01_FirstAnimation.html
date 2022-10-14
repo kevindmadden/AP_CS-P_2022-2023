@@ -28,6 +28,7 @@
         let xPos = 100
         let yPos = 50
         let xVel = 40 // px/sec
+        let yVel = 60 // px/sec
 
         let prevTimeStamp = 0
         window.requestAnimationFrame(gameLoop)
@@ -36,11 +37,20 @@
             prevTimeStamp = currentTimeStamp
 
             ctx.clearRect(0,0,500,500)
-            console.log(currentTimeStamp)
 
             xPos = xPos + xVel*timeElapsed
+            yPos = yPos + yVel*timeElapsed
 
             ctx.fillRect(xPos, yPos, 50, 50)
+
+            if(yPos > 450){
+                console.log("below 500 in y-direction")
+                yVel = yVel*-1
+            }
+
+            if(xPos > 450){
+                xVel = xVel*-1
+            }
 
 
 
