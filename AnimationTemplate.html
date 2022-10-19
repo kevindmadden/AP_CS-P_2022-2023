@@ -15,10 +15,21 @@
         function gameLoop(currentTimeStamp) {
             let timeElapsed = (currentTimeStamp - prevTimeStamp) / 1000
             prevTimeStamp = currentTimeStamp
-
+            ctx.clearRect(0, 0, 500, 500)
 
 
             window.requestAnimationFrame(gameLoop)
+        }
+
+
+        //Collision Detection
+        function didCirclesCollide(x1, y1, r1, x2, y2, r2){
+            let distance = Math.sqrt(  Math.pow(x1-x2,2) + Math.pow(y1-y2,2) )
+            if(r1+r2 < distance){
+                return false
+            }else{
+                return true
+            }
         }
 
         //Mouse Input Stuff
