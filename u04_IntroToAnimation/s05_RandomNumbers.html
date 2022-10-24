@@ -10,6 +10,17 @@
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
 
+
+    let randomNumber = Math.random()
+    console.log(randomNumber)
+    console.log(randomNumber*10) //random num b/w 0 and 10
+    console.log(randomNumber*100) //random num b/w 0 and 100
+    console.log(randomNumber*5) //random num b/w 0 and 5
+    console.log(randomNumber*10+10) //random num b/w 10 and 20
+    console.log(randomNumber*20-10) //random num b/w -10 and 10
+
+
+
     let prevTimeStamp = 0
     window.requestAnimationFrame(gameLoop)
     function gameLoop(currentTimeStamp) {
@@ -38,8 +49,14 @@
 
 
 
+
+
+
+      didCirclesCollide(250, 250, 0, xCoord, yCoord, 0)
+
       window.requestAnimationFrame(gameLoop)
     }
+
 
     function didCirclesCollide(x1, y1, r1, x2, y2, r2){
       let distance = Math.sqrt(  Math.pow(x1-x2,2) + Math.pow(y1-y2,2) )
