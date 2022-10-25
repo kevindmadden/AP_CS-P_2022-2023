@@ -26,13 +26,8 @@
     const ctx = canvas.getContext("2d")
 
 
-    let randomNumber = Math.random()
-    console.log(randomNumber)
-    console.log(randomNumber*10) //random num b/w 0 and 10
-    console.log(randomNumber*100) //random num b/w 0 and 100
-    console.log(randomNumber*5) //random num b/w 0 and 5
-    console.log(randomNumber*10+10) //random num b/w 10 and 20
-    console.log(randomNumber*20-10) //random num b/w -10 and 10
+
+    let randomX = Math.random()*500
 
 
 
@@ -49,13 +44,13 @@
       ctx.fill()
 
       ctx.beginPath()
-      ctx.arc(250, 250, 10, 0, 2*Math.PI)
+      ctx.arc(randomX, 250, 10, 0, 2*Math.PI)
       ctx.closePath()
       ctx.fill()
 
 
 
-      if(didCirclesCollide(xCoord, yCoord, 10, 250, 250, 10)){
+      if(didCirclesCollide(xCoord, yCoord, 10, randomX, 250, 10)){
         console.log("circles are colliding!!!")
         ctx.fillStyle = "red"
       }else{
