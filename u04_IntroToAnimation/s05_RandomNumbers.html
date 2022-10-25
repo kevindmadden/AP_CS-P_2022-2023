@@ -6,6 +6,21 @@
   <canvas id="canvas" width="500px" height="500px" style="border: 1px solid black;" tabindex="1" autofocus></canvas>
   <p id="coordinateValues">Coordinates - x: 0, y: 0</p>
   <script>
+    /*
+      1. Figure out how to randomly place a circle on the screen.
+      2. Implement a call to didCirclesCollide function so that it can detect whether the circle you're controlling with your cursor collided with the randomly generated circle.
+        a.) When you randomly generate the number, store the coordinates in a variable.
+        b.)  Circle #1: When calling didCirclesCollide use the variables you stored the random x and y coordinates in.
+             Circle #2: Use variables for the coordinates of your cursor for the other variables you use when calling didCirclesCollide.
+       3. When a collision is detected...
+              increment a counter variable
+              re-randomize the coordinates of the random circle
+       4. Ideas for Improvements:
+          a.) Make the radius random too.
+          b.) Make the random circle move.
+
+       */
+
     //Canvas API: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
@@ -46,28 +61,6 @@
       }else{
         ctx.fillStyle = "black"
       }
-
-
-      /*
-      1. Figure out how to randomly place a circle on the screen.
-      2. Implement a call to didCirclesCollide function so that it can detect whether the circle you're controlling with your cursor collided with the randomly generated circle.
-        a.) When you randomly generate the number, store the coordinates in a variable.
-        b.)  Circle #1: When calling didCirclesCollide use the variables you stored the random x and y coordinates in.
-             Circle #2: Use variables for the coordinates of your cursor for the other variables you use when calling didCirclesCollide.
-       3. When a collision is detected...
-              increment a counter variable
-              re-randomize the coordinates of the random circle
-       4. Ideas for Improvements:
-          a.) Make the radius random too.
-          b.) Make the random circle move.
-
-       */
-
-
-
-
-
-
 
       didCirclesCollide(250, 250, 0, xCoord, yCoord, 0)
 
