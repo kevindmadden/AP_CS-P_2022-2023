@@ -2,35 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Variable Scope</title>
   <canvas id="canvas" width="500px" height="500px" style="border: 1px solid black;" tabindex="1" autofocus></canvas>
   <p id="coordinateValues">Coordinates - x: 0, y: 0</p>
   <script>
-    /*
-      1. Figure out how to randomly place a circle on the screen.
-      2. Implement a call to didCirclesCollide function so that it can detect whether the circle you're controlling with your cursor collided with the randomly generated circle.
-        a.) When you randomly generate the number, store the coordinates in a variable.
-        b.)  Circle #1: When calling didCirclesCollide use the variables you stored the random x and y coordinates in.
-             Circle #2: Use variables for the coordinates of your cursor for the other variables you use when calling didCirclesCollide.
-       3. When a collision is detected...
-              increment a counter variable
-              re-randomize the coordinates of the random circle
-       4. Ideas for Improvements:
-          a.) Make the radius random too.
-          b.) Make the random circle move.
-          c.) Show a score on the screen.
-
-       */
-
     //Canvas API: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
 
+    /*
+      Variables exist ONLY between the bracesin which you create the variable.
+     */
 
-
-    let randomX = Math.random()*500
-
-
+    let existsEverywhere = 0
 
     let prevTimeStamp = 0
     window.requestAnimationFrame(gameLoop)
@@ -39,31 +23,19 @@
       prevTimeStamp = currentTimeStamp
       ctx.clearRect(0, 0, 500, 500)
 
-      ctx.beginPath()
-      ctx.arc(xCoord, yCoord, 10, 0, 2*Math.PI)
-      ctx.closePath()
-      ctx.fill()
+      let createdInLoop = 0
+      createdInLoop++
+      console.log('createdInLoop: '+createdInLoop)
 
-      ctx.beginPath()
-      ctx.arc(randomX, 250, 10, 0, 2*Math.PI)
-      ctx.closePath()
-      ctx.fill()
+      existsEverywhere++ // existsEverywhere = existsEverywhere + 1
+      console.log('existsEverywhere: '+existsEverywhere)
 
-
-
-      if(didCirclesCollide(xCoord, yCoord, 10, randomX, 250, 10)){
-        console.log("circles are colliding!!!")
-        ctx.fillStyle = "red"
-      }else{
-        ctx.fillStyle = "black"
-      }
-
-      didCirclesCollide(250, 250, 0, xCoord, yCoord, 0)
 
       window.requestAnimationFrame(gameLoop)
     }
 
 
+    //Collision Detection
     function didCirclesCollide(x1, y1, r1, x2, y2, r2){
       let distance = Math.sqrt(  Math.pow(x1-x2,2) + Math.pow(y1-y2,2) )
       if(r1+r2 < distance){
