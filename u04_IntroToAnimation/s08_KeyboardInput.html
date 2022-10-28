@@ -30,9 +30,23 @@
 
       if(kbInput.left.isPressed){
         rect.xVel = -50
-      }else{
+      }
+
+      if(kbInput.right.isPressed){
+        rect.xVel = 50
+      }
+
+      /*
+      !kbInput.left.isPressed
+       means same thing as
+      kbInput.left.isPressed===false
+      */
+      
+      if(!kbInput.left.isPressed && !kbInput.right.isPressed){
         rect.xVel = 0
       }
+
+
 
       ctx.fillRect(rect.xPos, rect.yPos, rect.width, rect.height)
 
