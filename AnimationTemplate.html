@@ -87,6 +87,32 @@
             }
         }
 
+        function didRectanglesCollide(rect1_x, rect1_y, rect1_width, rect1_height, rect2_x, rect2_y, rect2_width, rect2_height){ //https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+            if (rect1_x < rect2_x + rect2_width &&
+                rect1_x + rect1_width > rect2_x &&
+                rect1_y < rect2_y + rect2_height &&
+                rect1_y + rect1_height > rect2_y) {
+                return true
+            }else{
+                return false
+            }
+        }
+
+        function didRectangleCircleCollide(rect_x, rect_y, rect_w, rect_h, circle_x, circle_y, circle_r){ //https://stackoverflow.com/questions/21089959/detecting-collision-of-rectangle-with-circle
+            let distX = Math.abs(circle_x - rect_x-rect_w/2);
+            let distY = Math.abs(circle_y - rect_y-rect_h/2);
+
+            if (distX > (rect_w/2 + circle_r)) { return false; }
+            if (distY > (rect_h/2 + circle_r)) { return false; }
+
+            if (distX <= (rect_w/2)) { return true; }
+            if (distY <= (rect_h/2)) { return true; }
+
+            let dx=distX-rect_w/2;
+            let dy=distY-rect_h/2;
+            return (dx*dx+dy*dy<=(circle_r*circle_r));
+        }
+
         //Mouse Input Stuff
         let xCoord = 0
         let yCoord = 0
