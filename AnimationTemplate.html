@@ -23,6 +23,8 @@
 
 
 
+
+
             window.requestAnimationFrame(gameLoop)
         }
 
@@ -95,6 +97,28 @@
             }else{
                 return false
             }
+        }
+
+        function didRectangleCircleCollide(rect, circle){ //https://stackoverflow.com/questions/21089959/detecting-collision-of-rectangle-with-circle
+            let rect_x = rect.xPos
+            let rect_y = rect.yPos
+            let rect_w = rect.width
+            let rect_h = rect.height
+            let circle_x = circle.xPos
+            let circle_y = circle.yPos
+            let circle_r = circle.radius
+            let distX = Math.abs(circle_x - rect_x-rect_w/2);
+            let distY = Math.abs(circle_y - rect_y-rect_h/2);
+
+            if (distX > (rect_w/2 + circle_r)) { return false; }
+            if (distY > (rect_h/2 + circle_r)) { return false; }
+
+            if (distX <= (rect_w/2)) { return true; }
+            if (distY <= (rect_h/2)) { return true; }
+
+            let dx=distX-rect_w/2;
+            let dy=distY-rect_h/2;
+            return (dx*dx+dy*dy<=(circle_r*circle_r));
         }
 
 
