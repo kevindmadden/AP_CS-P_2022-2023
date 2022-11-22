@@ -25,6 +25,29 @@
       height: 80,
     }
 
+    let randomPipeSize = Math.random()*225
+    let pipeSection = {
+      topPipe : {
+        xPos: 500,
+        yPos: 0,
+        width: 50,
+        height: 75+randomPipeSize,
+      },
+      bottomPipe : {
+        xPos: 500,
+        yPos: 75+randomPipeSize + 150,
+        width: 50,
+        height: 500,
+      }
+    }
+
+    let pipeVel = -50
+
+    function pipeFactory(){
+
+    }
+
+
 
     let prevTimeStamp = 0
     window.requestAnimationFrame(gameLoop)
@@ -34,6 +57,10 @@
       ctx.clearRect(0, 0, 500, 500)
 
       bird.yPos = bird.yPos + bird.yVel*timeElapsed
+      pipeSection.topPipe.xPos = pipeSection.topPipe.xPos + pipeVel*timeElapsed
+      pipeSection.bottomPipe.xPos = pipeSection.bottomPipe.xPos + pipeVel*timeElapsed
+
+
 
       if(kbInput.up.isPressed){
         bird.yVel = -100
@@ -41,16 +68,30 @@
         bird.yVel = 100
       }
 
-      ctx.fillStyle = "green"
-      ctx.fillRect(ground.xPos, ground.yPos, ground.width, ground.height)
 
       ctx.fillStyle = "blue"
       ctx.fillRect(bird.xPos, bird.yPos, bird.width, bird.height)
 
+      //Pipes
+      ctx.fillStyle = "yellow"
+      ctx.fillRect(pipeSection.topPipe.xPos, pipeSection.topPipe.yPos, pipeSection.topPipe.width, pipeSection.topPipe.height)
+      ctx.fillRect(pipeSection.bottomPipe.xPos, pipeSection.bottomPipe.yPos, pipeSection.bottomPipe.width, pipeSection.bottomPipe.height)
 
-      if(didRectangleCircleCollide(bird, ground)){
-        ctx.fillText("LLLLLLLLLLLLLLL", 250, 250)
+      //Ground
+      ctx.fillStyle = "green"
+      ctx.fillRect(ground.xPos, ground.yPos, ground.width, ground.height)
+
+      //Collision
+      if(didRectanglesCollide(bird,pipeSection.topPipe)){
+        showGameOverMessage()
       }
+      if(didRectanglesCollide(bird, pipeSection.bottomPipe)){
+        showGameOverMessage()
+      }
+      if(didRectanglesCollide(bird, ground)){
+        showGameOverMessage()
+      }
+
 
 
 
@@ -58,6 +99,10 @@
       window.requestAnimationFrame(gameLoop)
     }
 
+    function showGameOverMessage(){
+      ctx.font = "30px Arial"
+      ctx.fillText("LLLLLLLLLLLLLLL", 250, 250)
+    }
 
 
 
