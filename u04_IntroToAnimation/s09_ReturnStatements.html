@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Return Statements</title>
+</head>
+<body>
+<script>
+
+function functionThatReturns(){
+  let randomNum = Math.random()*100
+  console.log("Inside function, just generated this number:"+randomNum)
+  return randomNum
+}
+
+let randomNum1 = functionThatReturns()
+console.log("Now we are outside the function, with this random number"+randomNum1)
+
+
+let randomNum2 = functionThatReturns()
+console.log("Now we are outside the function, with this random number"+randomNum2)
+
+</script>
+
+</body>
+</html>

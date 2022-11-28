@@ -48,20 +48,10 @@
       return pipeSection
     }
 
-    /*let pipeSection1 = pipeFactory(500)
-    console.log(pipeSection1)
-    let pipeSection2 = pipeFactory(800)
-    console.log(pipeSection2)
-
-    let pipes = [pipeSection1, pipeSection2]*/
-
     let pipes = []
     pipes.push(pipeFactory(500))
     pipes.push(pipeFactory(800))
-
-
-
-
+    pipes.push(pipeFactory(1100))
 
     let prevTimeStamp = 0
     window.requestAnimationFrame(gameLoop)
@@ -71,12 +61,6 @@
       ctx.clearRect(0, 0, 500, 500)
 
       bird.yPos = bird.yPos + bird.yVel*timeElapsed
-
-      /*pipeSection1.topPipe.xPos = pipeSection1.topPipe.xPos + pipeVel*timeElapsed
-      pipeSection1.bottomPipe.xPos = pipeSection1.bottomPipe.xPos + pipeVel*timeElapsed
-
-      pipeSection2.topPipe.xPos = pipeSection2.topPipe.xPos + pipeVel*timeElapsed
-      pipeSection2.bottomPipe.xPos = pipeSection2.bottomPipe.xPos + pipeVel*timeElapsed*/
 
       //The below for-loop replaces the above four lines.
       for(let pipe of pipes){
@@ -98,11 +82,6 @@
 
       //Pipes
       ctx.fillStyle = "yellow"
-      /*ctx.fillRect(pipeSection1.topPipe.xPos, pipeSection1.topPipe.yPos, pipeSection1.topPipe.width, pipeSection1.topPipe.height)
-      ctx.fillRect(pipeSection1.bottomPipe.xPos, pipeSection1.bottomPipe.yPos, pipeSection1.bottomPipe.width, pipeSection1.bottomPipe.height)
-
-      ctx.fillRect(pipeSection2.topPipe.xPos, pipeSection2.topPipe.yPos, pipeSection2.topPipe.width, pipeSection2.topPipe.height)
-      ctx.fillRect(pipeSection2.bottomPipe.xPos, pipeSection2.bottomPipe.yPos, pipeSection2.bottomPipe.width, pipeSection2.bottomPipe.height)*/
 
       for(let pipe of pipes){
         ctx.fillRect(pipe.topPipe.xPos, pipe.topPipe.yPos, pipe.topPipe.width, pipe.topPipe.height)
@@ -115,20 +94,6 @@
       ctx.fillStyle = "green"
       ctx.fillRect(ground.xPos, ground.yPos, ground.width, ground.height)
 
-      //Collision
-      /*if(didRectanglesCollide(bird,pipeSection1.topPipe)){
-        showGameOverMessage()
-      }
-      if(didRectanglesCollide(bird, pipeSection1.bottomPipe)){
-        showGameOverMessage()
-      }
-      if(didRectanglesCollide(bird,pipeSection2.topPipe)){
-        showGameOverMessage()
-      }
-      if(didRectanglesCollide(bird, pipeSection2.bottomPipe)){
-        showGameOverMessage()
-      }*/
-
       for(let pipe of pipes){
         if(didRectanglesCollide(bird,pipe.topPipe)){
           showGameOverMessage()
@@ -138,15 +103,9 @@
         }
       }
 
-
-
       if(didRectanglesCollide(bird, ground)){
         showGameOverMessage()
       }
-
-
-
-
 
       window.requestAnimationFrame(gameLoop)
     }
