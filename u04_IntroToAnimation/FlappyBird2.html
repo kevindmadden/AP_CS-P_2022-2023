@@ -31,7 +31,8 @@
 
     function pipeFactory(startXpos){
       let randomPipeSize = Math.random()*225
-      let pipeSection = {
+      let pipeSection =
+       {
         topPipe : {
           xPos: startXpos,
           yPos: 0,
@@ -43,15 +44,18 @@
           yPos: 75+randomPipeSize + 150,
           width: 50,
           height: 500,
-        }
+        },
+         isAlive: true,
       }
       return pipeSection
     }
 
     let pipes = []
+    let pipeSection1 = pipeFactory(500)
+    pipes.push(pipeSection1)
+
     pipes.push(pipeFactory(500))
     pipes.push(pipeFactory(800))
-    pipes.push(pipeFactory(1100))
 
     let prevTimeStamp = 0
     window.requestAnimationFrame(gameLoop)
@@ -61,6 +65,14 @@
       ctx.clearRect(0, 0, 500, 500)
 
       bird.yPos = bird.yPos + bird.yVel*timeElapsed
+
+      //Logic for generating new pipes
+      for(let pipe of pipes){
+        if(pipe.topPipe.xPos < 0 && pipe.isAlive){
+          pipes.push(pipeFactory(800))
+          pipe.isAlive = false
+        }
+      }
 
       //The below for-loop replaces the above four lines.
       for(let pipe of pipes){
