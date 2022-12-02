@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factoring Trinomials</title>
+</head>
+<script>
+    function generateTrinomial(a, b, c, d){
+        // (ax+b)(cx+d)
+        let trinomial = {
+            a: a,
+            b: b,
+            c: c,
+            d: d,
+        }
+    }
+    let possibilities = []
+
+    /*
+    (-2x+4)
+     ^^
+     "("+leadTerm(-2,"x")+...
+     */
+    function leadTerm(a,str){
+        if(a===0) return ""
+        if(a<0) return "-"+a+str
+        if(a>0) return ""+a+str
+    }
+
+    function trailTerm(a,str){
+
+    }
+
+    for(let i=-13; i<=13; i++){
+        for(let j=i; j<=13; j++){
+            if(i===0 && j===0) continue
+            possibilities.push(generateTrinomial(1,i,1,j))
+            let i_str = i>=0 ? "+"+i : i
+            if(i===0) i_str=""
+            let j_str = j>=0 ? "+"+j : j
+            if(j===0) j_str=""
+            let i_plus_j_str = i+j>=0 ? "+"+(i+j) : i+j
+            if(i+j===0) i_plus_j_str=""
+            let i_x_j = i*j >= 0 ? "+"+(i*j) : i*j
+            if(i*j===0) i_x_j = ""
+
+            console.log("(x"+i_str+")(x"+j_str+") = x^2"+(i_plus_j_str)+"x"+(i_x_j))
+        }
+    }
+</script>
+
+<body>
+
+
+</body>
+</html>
