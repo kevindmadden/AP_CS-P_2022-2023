@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca8c503-a103-4a13-a410-baee59601785" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/u04_IntroToAnimation/s12_TriggeringBasedOnTotalTimeElapsed.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u99_Testing/Pixi3D/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u99_Testing/Pixi3D/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/u99_Testing/MatterTestingMinimalEx.js" beforeDir="false" afterPath="$PROJECT_DIR$/u99_Testing/MatterTestingMinimalEx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing.html" beforeDir="false" afterPath="$PROJECT_DIR$/Testing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u98_Alg2Stuff/FactoringTrinomials.html" beforeDir="false" afterPath="$PROJECT_DIR$/u98_Alg2Stuff/FactoringTrinomials.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u99_Testing/ScrapTesting.html" beforeDir="false" afterPath="$PROJECT_DIR$/u99_Testing/ScrapTesting.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -32,25 +37,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Github/AP_CS-P_2022-2023/u03_IntroToGraphics"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Github/AP_CS-P_2022-2023/u04_IntroToAnimation&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Github\AP_CS-P_2022-2023\u03_IntroToGraphics" />
-      <recent name="C:\Github\AP_CS-P_2022-2023\u02_IntroToJavascript" />
+      <recent name="C:\Github\AP_CS-P_2022-2023\u04_IntroToAnimation" />
+      <recent name="C:\Github\AP_CS-P_2022-2023\u98_Alg2Stuff" />
+      <recent name="C:\Github\AP_CS-P_2022-2023" />
       <recent name="C:\Github\AP_CS-P_2022-2023\u99_Testing" />
-      <recent name="C:\Github\AP_CS-P_2022-2023\u01_HTML-CSS" />
+      <recent name="C:\Github\AP_CS-P_2022-2023\u03_IntroToGraphics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Github\AP_CS-P_2022-2023\u98_Alg2Stuff" />
       <recent name="C:\Github\AP_CS-P_2022-2023\u01_HTML-CSS" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.RectangleMain">
+    <configuration name="RectangleMain" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="RectangleMain" />
+      <module name="AP_CS-P_2022-2023" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="quick" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AP_CS-P_2022-2023" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,33 +124,24 @@
       <workItem from="1663774324392" duration="866000" />
       <workItem from="1663853437334" duration="541000" />
       <workItem from="1663854542667" duration="304000" />
-      <workItem from="1663854896419" duration="15815000" />
+      <workItem from="1663854896419" duration="25773000" />
+      <workItem from="1664823117287" duration="5198000" />
+      <workItem from="1664903441595" duration="16936000" />
+      <workItem from="1666114246284" duration="1200000" />
+      <workItem from="1666183412657" duration="23218000" />
+      <workItem from="1667240158650" duration="39000" />
+      <workItem from="1667308387262" duration="2043000" />
+      <workItem from="1668002419197" duration="13267000" />
+      <workItem from="1668605446478" duration="21664000" />
+      <workItem from="1669652795180" duration="2355000" />
+      <workItem from="1669816045216" duration="20779000" />
+      <workItem from="1670518033830" duration="3806000" />
+      <workItem from="1670595076275" duration="2702000" />
+      <workItem from="1670956983386" duration="623000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="233" y="5" key="#Project_Structure" timestamp="1660826764537">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="233" y="5" key="#Project_Structure/0.0.1280.689@0.0.1280.689" timestamp="1660826764537" />
-    <state x="94" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1662558510778">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="94" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1662558510778" />
-    <state x="360" y="0" key="#quick" timestamp="1662558490326">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="360" y="0" key="#quick/0.0.1280.689@0.0.1280.689" timestamp="1662558490326" />
-    <state x="421" y="54" key="FileChooserDialogImpl" timestamp="1662558570261">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="421" y="54" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1662558570261" />
-    <state x="91" y="0" width="1099" height="623" key="new project wizard" timestamp="1663074127572">
-      <screen x="0" y="0" width="1280" height="689" />
-    </state>
-    <state x="91" y="0" width="1099" height="623" key="new project wizard/0.0.1280.689@0.0.1280.689" timestamp="1663074127572" />
   </component>
 </project>

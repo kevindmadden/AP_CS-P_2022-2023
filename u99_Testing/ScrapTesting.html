@@ -3,8 +3,200 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-</head>
-<body>
+  <canvas id="canvas" width="500px" height="500px" style="border: 1px solid black;" tabindex="1" autofocus></canvas>
+  <p id="coordinateValues">Coordinates - x: 0, y: 0</p>
+  <script>
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
 
-</body>
+    let xPos = 250
+    let yPos = 100
+    let xVel = 40
+    let yVel = 40
+
+    let rect = {
+      xPos: 20,
+      yPos: 250,
+      xVel: 0,
+      yVel: 0,
+      width: 20,
+      height: 125,
+    }
+
+    let rect2 = {
+      xPos: 480,
+      yPos: 250,
+      xVel: 0,
+      yVel: 0,
+      width: 20,
+      height: 125,
+    }
+
+    let shouldChangeColor = false
+
+    let prevTimeStamp = 0
+    window.requestAnimationFrame(gameLoop)
+
+    function gameLoop(currentTimeStamp) {
+      let timeElapsed = (currentTimeStamp - prevTimeStamp) / 1000
+      prevTimeStamp = currentTimeStamp
+      ctx.clearRect(0, 0, 500, 500)
+
+      rect.yPos = rect.yPos + rect.yVel * timeElapsed
+
+
+      if (kbInput.s.isPressed) {
+        rect.yVel = 500
+      }
+      if (kbInput.w.isPressed) {
+        rect.yVel = -500
+      }
+
+      if (kbInput.s.isPressed && kbInput.w.isPressed) {
+        rect.yVel = 0
+      }
+
+      if (!kbInput.s.isPressed && !kbInput.w.isPressed) {
+        rect.yVel = 0
+      }
+
+      rect2.yPos = rect2.yPos + rect2.yVel * timeElapsed
+
+      if (kbInput.down.isPressed) {
+        rect2.yVel = 500
+      }
+      if (kbInput.up.isPressed) {
+        rect2.yVel = -500
+      }
+
+      if (kbInput.down.isPressed && kbInput.up.isPressed) {
+        rect2.yVel = 0
+      }
+
+      if (!kbInput.down.isPressed && !kbInput.up.isPressed) {
+        rect2.yVel = 0
+      }
+
+
+      ctx.beginPath()
+      ctx.arc(xPos, yPos, 10, 0, 2 * Math.PI)
+      ctx.closePath()
+      ctx.fill()
+
+
+      xPos = xPos + xVel * timeElapsed
+      yPos = yPos + yVel * timeElapsed
+
+
+      if (yPos > 500) {
+
+        yVel = yVel * -1 //bottom wall
+      }
+
+      if (yPos < 0) {
+
+        yVel = yVel * -1 //top wall
+      }
+
+      if (xPos < rect.xPos && yPos < rect.yPos + rect.height && yPos > rect.yPos) {
+        console.log("x:"+xPos+"\t\t\t\t y:"+yPos)
+        xVel = xVel * -1
+
+      }
+
+      if (xPos > rect2.xPos && yPos < rect2.yPos + rect2.height && yPos > rect2.yPos) {
+        console.log("x:"+xPos+"\t\t\t\t y:"+yPos)
+        xVel = xVel * -1
+
+      }
+
+      ctx.fillRect(rect.xPos, rect.yPos, rect.width, rect.height)
+      ctx.fillRect(rect2.xPos, rect2.yPos, rect2.width, rect2.height)
+      window.requestAnimationFrame(gameLoop)
+    }
+
+    canvas.addEventListener('keydown', keyHandler)
+    canvas.addEventListener('keyup', keyHandler)
+
+    let kbInput = {
+      down: {
+        value: "ArrowDown",
+        isPressed: false,
+      },
+      up: {
+        value: "ArrowUp",
+        isPressed: false,
+      },
+      s: {
+        value: "s",
+        isPressed: false,
+      },
+      w: {
+        value: "w",
+        isPressed: false,
+      },
+    }
+
+    function keyHandler(event) {
+      event.preventDefault()
+      let type = event.type
+      let isPressed = false
+      if (type === "keydown") {
+        isPressed = true
+      }
+      if (event.key === kbInput.down.value) {
+        kbInput.down.isPressed = isPressed
+      }
+      if (event.key === kbInput.up.value) {
+        kbInput.up.isPressed = isPressed
+      }
+      if (event.key === kbInput.s.value) {
+        kbInput.s.isPressed = isPressed
+      }
+      if (event.key === kbInput.w.value) {
+        kbInput.w.isPressed = isPressed
+      }
+
+
+    }
+
+    let xCoord = 0
+    let yCoord = 0
+
+    function getCursorPosition(canvas, event) {
+      const rect = canvas.getBoundingClientRect()
+      xCoord = event.clientX - rect.left
+      yCoord = event.clientY - rect.top
+      document.getElementById("coordinateValues").innerHTML = "Coordinates - x: " + xCoord + ", y: " + yCoord
+    }
+
+    let xCoord2 = 0
+    let yCoord2 = 0
+
+    function getCursorPosition2(canvas, event) {
+      const rect = canvas.getBoundingClientRect()
+      xCoord = event.clientX - rect.left
+      yCoord = event.clientY - rect.top
+      document.getElementById("coordinateValues").innerHTML = "Coordinates - x: " + xCoord2 + ", y: " + yCoord2
+    }
+
+    canvas.addEventListener('mousemove', function (e) {
+      getCursorPosition2(canvas, e)
+    })
+
+
+    if (shouldChangeColor === true) {
+      ctx.fillStyle = "red"
+    } else {
+      ctx.fillStyle = "black"
+
+
+    }
+
+    canvas.addEventListener('mousemove', function (e) {
+      getCursorPosition2(canvas, e)
+    })
+  </script>
+</head>
+<body></body>
 </html>

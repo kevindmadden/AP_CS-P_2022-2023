@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Variable Scope</title>
+  <canvas id="canvas" width="800px" height="500px" style="border: 1px solid black;" tabindex="1" autofocus></canvas>
+  <p id="coordinateValues">Coordinates - x: 0, y: 0</p>
+  <script>
+    //Canvas API: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+    const canvas = document.getElementById("canvas")
+    const ctx = canvas.getContext("2d")
+
+
+
+    function update(t){
+      //addAnimation(200*t, 100*Math.pow(t, 2)-150*t+500)
+      //addAnimation(400*t, 100*Math.pow(t, 2)-150*t+500)
+      addAnimation(150*t, 100*Math.pow(t, 2)-400*t+500)
+
+
+
+    }
+
+
+    function addAnimation(xPos, yPos){
+      circle.xPos = xPos
+      circle.yPos = yPos
+      if(xPos < 600 && xPos > -100) console.log("x"+xPos)
+      if(yPos < 600 && yPos > -100) console.log("y"+yPos)
+      ctx.fillStyle = "black"
+      ctx.beginPath()
+      ctx.arc(circle.xPos, circle.yPos, 4, 0, 2*Math.PI)
+      ctx.closePath()
+      ctx.fill()
+    }
+
+
+    let circle = {
+      xPos : 250,
+      yPos : 250,
+      xVel1 : 50,
+      yVel1 : 60,
+      radius : 2,
+    }
+
+
+
+    let prevTimeStamp = 0
+    let wasStartTimeStampLogged = false
+    let startingTimeStamp = 0
+    window.requestAnimationFrame(gameLoop)
+    function gameLoop(currentTimeStamp) {
+      if(!wasStartTimeStampLogged){
+        startingTimeStamp = currentTimeStamp/1000
+        wasStartTimeStampLogged = true
+      }
+      let timeElapsed = (currentTimeStamp - prevTimeStamp) / 1000
+      prevTimeStamp = currentTimeStamp
+      //ctx.clearRect(0, 0, 500, 500)
+
+      update(currentTimeStamp/1000-startingTimeStamp)
+
+
+
+      window.requestAnimationFrame(gameLoop)
+    }
+
+
+    //Collision Detection
+    function didCirclesCollide(x1, y1, r1, x2, y2, r2){
+      let distance = Math.sqrt(  Math.pow(x1-x2,2) + Math.pow(y1-y2,2) )
+      if(r1+r2 < distance){
+        return false
+      }else{
+        return true
+      }
+    }
+
+
+    //Mouse Input Stuff
+    let xCoord = 0
+    let yCoord = 0
+    function getCursorPosition(canvas, event) {
+      const rect = canvas.getBoundingClientRect()
+      xCoord = event.clientX - rect.left
+      yCoord = event.clientY - rect.top
+      document.getElementById("coordinateValues").innerHTML = "Coordinates - x: "+xCoord+", y: "+yCoord
+    }
+
+    canvas.addEventListener('mousemove', function(e) { getCursorPosition(canvas, e)})
+
+  </script>
+</head>
+<body></body>
+</html>
