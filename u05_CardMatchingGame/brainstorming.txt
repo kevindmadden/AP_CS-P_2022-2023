@@ -1,0 +1,7 @@
+state = {
+    isFlippedOver : false,
+    color : "yellow",
+    wasMatchFound : false,
+    isMouseHovering : false,
+}
+
