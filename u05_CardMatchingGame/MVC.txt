@@ -1,0 +1,4 @@
+MVC
+Model - Logic: Updating the state of the card
+View - Drawing what appears to the user
+Controller - User input (clicking, hovering, etc.)

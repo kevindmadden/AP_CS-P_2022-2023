@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca8c503-a103-4a13-a410-baee59601785" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/u04_IntroToAnimation/s12_TriggeringBasedOnTotalTimeElapsed.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u99_Testing/Pixi3D/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u99_Testing/Pixi3D/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u05_CardMatchingGame/MVC.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing.html" beforeDir="false" afterPath="$PROJECT_DIR$/Testing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/u98_Alg2Stuff/FactoringTrinomials.html" beforeDir="false" afterPath="$PROJECT_DIR$/u98_Alg2Stuff/FactoringTrinomials.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/u99_Testing/ScrapTesting.html" beforeDir="false" afterPath="$PROJECT_DIR$/u99_Testing/ScrapTesting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u05_CardMatchingGame/CardMatchingGame.html" beforeDir="false" afterPath="$PROJECT_DIR$/u05_CardMatchingGame/CardMatchingGame.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +16,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,7 +38,7 @@
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Github/AP_CS-P_2022-2023/u04_IntroToAnimation&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Github/AP_CS-P_2022-2023/u05_CardMatchingGame&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -49,11 +46,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Github\AP_CS-P_2022-2023\u05_CardMatchingGame" />
       <recent name="C:\Github\AP_CS-P_2022-2023\u04_IntroToAnimation" />
       <recent name="C:\Github\AP_CS-P_2022-2023\u98_Alg2Stuff" />
       <recent name="C:\Github\AP_CS-P_2022-2023" />
       <recent name="C:\Github\AP_CS-P_2022-2023\u99_Testing" />
-      <recent name="C:\Github\AP_CS-P_2022-2023\u03_IntroToGraphics" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Github\AP_CS-P_2022-2023\u98_Alg2Stuff" />
@@ -137,7 +134,11 @@
       <workItem from="1669816045216" duration="20779000" />
       <workItem from="1670518033830" duration="3806000" />
       <workItem from="1670595076275" duration="2702000" />
-      <workItem from="1670956983386" duration="623000" />
+      <workItem from="1670956983386" duration="5463000" />
+      <workItem from="1673291792438" duration="590000" />
+      <workItem from="1673444247837" duration="4469000" />
+      <workItem from="1673454801445" duration="741000" />
+      <workItem from="1673531281759" duration="2011000" />
     </task>
     <servers />
   </component>

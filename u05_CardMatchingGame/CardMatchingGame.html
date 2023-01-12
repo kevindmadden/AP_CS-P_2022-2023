@@ -22,6 +22,27 @@
             width : 50,
             height : 100,
         }
+        let card2 = {
+            isFlippedOver : false,
+            color : "yellow",
+            wasMatchFound : false,
+            isMouseHovering : false,
+            xPos : 100,
+            yPos : 10,
+            width : 50,
+            height : 100,
+        }
+        let card3 = {
+            isFlippedOver : false,
+            color : "red",
+            wasMatchFound : false,
+            isMouseHovering : false,
+            xPos : 200,
+            yPos : 10,
+            width : 50,
+            height : 100,
+        }
+
 
         let mouseRectangle = {
             xPos : 0,
@@ -39,23 +60,73 @@
             mouseRectangle.xPos = xCoord
             mouseRectangle.yPos = yCoord
 
-
+            //Logic
             console.log(onClick)
 
             if(didRectanglesCollide(card1, mouseRectangle)){
-                ctx.fillStyle = "grey"
+                card1.isMouseHovering = true
             }else{
-                ctx.fillStyle = "black"
+                card1.isMouseHovering = false
+            }
+            if(didRectanglesCollide(card2, mouseRectangle)){
+                card2.isMouseHovering = true
+            }else{
+                card2.isMouseHovering = false
+            }
+            if(didRectanglesCollide(card3, mouseRectangle)){
+                card3.isMouseHovering = true
+            }else{
+                card3.isMouseHovering = false
             }
 
-            //No longer working due to something with our grouping
+
+
             if(didRectanglesCollide(card1, mouseRectangle) && onClick){
-                ctx.fillStyle = card1.color
+                card1.isFlippedOver = true
+                onClick = false
+            }
+            if(didRectanglesCollide(card2, mouseRectangle) && onClick){
+                card2.isFlippedOver = true
+                onClick = false
+            }
+            if(didRectanglesCollide(card3, mouseRectangle) && onClick){
+                card3.isFlippedOver = true
                 onClick = false
             }
 
 
+            //Drawing
+            if(card1.isMouseHovering){
+                ctx.fillStyle = "grey"
+            }
+            if(!card1.isMouseHovering){
+                ctx.fillStyle = "black"
+            }
+            if(card1.isFlippedOver){
+                ctx.fillStyle = card1.color
+            }
             ctx.fillRect(card1.xPos, card1.yPos, card1.width, card1.height)
+            if(card2.isMouseHovering){
+                ctx.fillStyle = "grey"
+            }
+            if(!card2.isMouseHovering){
+                ctx.fillStyle = "black"
+            }
+            if(card2.isFlippedOver){
+                ctx.fillStyle = card2.color
+            }
+            ctx.fillRect(card2.xPos, card2.yPos, card2.width, card2.height)
+            if(card3.isMouseHovering){
+                ctx.fillStyle = "grey"
+            }
+            if(!card3.isMouseHovering){
+                ctx.fillStyle = "black"
+            }
+            if(card3.isFlippedOver){
+                ctx.fillStyle = card3.color
+            }
+            ctx.fillRect(card3.xPos, card3.yPos, card3.width, card3.height)
+
 
 
 
