@@ -10,8 +10,46 @@
         const canvas = document.getElementById("canvas")
         const ctx = canvas.getContext("2d")
 
+        /*
+        let list = ["apple","strawberry","banana","orange","lemon"]
+        console.log(list[0]) //prints: apple
+        console.log(list[3]) //prints: orange
+
+        All the possibilities for what could be stored in tempListOfTwoCards:
+        [card1,card2]
+        [card2,card1]
+        [card1,card3]
+        [card3,card1]
+        [card2,card3]
+        [card3,card2]
+         */
+
+
+
         let onClick = false
 
+        /*
+        if a card is flippedOver, add it to a list of cards just flipped over
+        if a second card is flipped over, add it to the list of cards just flipped over
+        check the two cards in the list
+        --if the color of those two cards matches, then update the wasMatchFound
+        property to be true
+        --when the mouse leaves the card it is hovering over, delete both items from the list
+
+        if 2 cards are flipped over and match has not been found, then flip
+        those two cards back over
+
+         recentFlippedNum that we've just flipped
+         recentFlippedNum=recentFlippedNum+1 click on one card
+         recentFlippedNum=recentFlippedNum+1 click one a second card
+         recentFlippedNum=0 when the mouse leaves the card it's currently hovering over
+
+         */
+
+
+
+        let tempListOfTwoCards = []
+        let recentFlippedNum = 0
         let card1 = {
             isFlippedOver : false,
             color : "red",
@@ -84,20 +122,32 @@
             if(didRectanglesCollide(card1, mouseRectangle) && onClick){
                 card1.isFlippedOver = true
                 onClick = false
+                recentFlippedNum++
+                tempListOfTwoCards.push(card1)
             }
             if(didRectanglesCollide(card2, mouseRectangle) && onClick){
                 card2.isFlippedOver = true
                 onClick = false
+                recentFlippedNum++
+                tempListOfTwoCards.push(card2)
             }
             if(didRectanglesCollide(card3, mouseRectangle) && onClick){
                 card3.isFlippedOver = true
                 onClick = false
+                recentFlippedNum++
+                tempListOfTwoCards.push(card3)
             }
+            //if recentFlippedNum is 2, then flip those two cards back over if they do not match
 
-
+//if mouse is no longer hovering over a card, then flip the cards in the list back over and then remove from the list
             //Drawing
             if(card1.isMouseHovering){
                 ctx.fillStyle = "grey"
+                if(recentFlippedNum===2){
+                    //check whether the card at tempListOfTwoCards[0] has the same color as the item at tempListOfTwoCards[1]
+                    tempListOfTwoCards.pop()
+                    tempListOfTwoCards.pop()
+                }
             }
             if(!card1.isMouseHovering){
                 ctx.fillStyle = "black"
@@ -126,6 +176,7 @@
                 ctx.fillStyle = card3.color
             }
             ctx.fillRect(card3.xPos, card3.yPos, card3.width, card3.height)
+
 
 
 
