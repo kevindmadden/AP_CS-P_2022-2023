@@ -5,3 +5,29 @@ state = {
     isMouseHovering : false,
 }
 
+-----
+How lists work
+
+              0          1          2        3        4
+let list = ["apple","strawberry","banana","orange","lemon"]
+        console.log(list[0]) //prints: apple
+        console.log(list[3]) //prints: orange
+
+        All the possibilities for what could be stored in tempListOfTwoCards:
+        if(card1.isHovering===true && card1.isFlippedOver && card1.isMouseHovering &&
+             recentntNumCards===2){
+                 if(card2.isHovering===true && card2.isFlippedOver &&
+                        card2.isMouseHovering && recentNumCards===2){
+                            card1.isMatchFound
+                        }
+             }
+           0     1
+        [card1,card2]
+        [card2,card1]
+        [card1,card3]
+        [card3,card1]
+        [card2,card3]
+        [card3,card2]
+
+tempListOfTwoCards[0]
+tempListOfTwoCards[1]

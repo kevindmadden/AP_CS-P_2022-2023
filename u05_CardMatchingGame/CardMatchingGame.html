@@ -10,22 +10,6 @@
         const canvas = document.getElementById("canvas")
         const ctx = canvas.getContext("2d")
 
-        /*
-        let list = ["apple","strawberry","banana","orange","lemon"]
-        console.log(list[0]) //prints: apple
-        console.log(list[3]) //prints: orange
-
-        All the possibilities for what could be stored in tempListOfTwoCards:
-        [card1,card2]
-        [card2,card1]
-        [card1,card3]
-        [card3,card1]
-        [card2,card3]
-        [card3,card2]
-         */
-
-
-
         let onClick = false
 
         /*
@@ -98,8 +82,9 @@
             mouseRectangle.xPos = xCoord
             mouseRectangle.yPos = yCoord
 
-            //Logic
-            console.log(onClick)
+            /* ------------------------
+                Logic
+             ------------------------ */
 
             if(didRectanglesCollide(card1, mouseRectangle)){
                 card1.isMouseHovering = true
@@ -116,8 +101,6 @@
             }else{
                 card3.isMouseHovering = false
             }
-
-
 
             if(didRectanglesCollide(card1, mouseRectangle) && onClick){
                 card1.isFlippedOver = true
@@ -138,9 +121,38 @@
                 tempListOfTwoCards.push(card3)
             }
             //if recentFlippedNum is 2, then flip those two cards back over if they do not match
+            if(recentFlippedNum === 2){
+                let tempCard1 = tempListOfTwoCards[0]
+                let tempCard2 = tempListOfTwoCards[1]
+                console.log(tempCard1)
+                console.log(tempCard2)
+                if( tempCard1.color === tempCard2.color){
+                    tempCard1.wasMatchFound = true
+                    tempCard2.wasMatchFound = true
+                    recentFlippedNum = 0
+                }
+                if(tempCard1.color !== tempCard2.color){
+                    if(!card1.isMouseHovering && !card2.isMouseHovering && !card3.isMouseHovering){
+                        tempCard1.isFlippedOver = false
+                        tempCard2.isFlippedOver = false
+                        console.log(card1)
+                        console.log(card2)
+                        console.log(card3)
+                        recentFlippedNum = 0
+                        tempListOfTwoCards.pop()
+                        tempListOfTwoCards.pop()
+                    }
+                }
+
+            }
+
 
 //if mouse is no longer hovering over a card, then flip the cards in the list back over and then remove from the list
-            //Drawing
+
+
+            /* ------------------------
+                    Drawing
+               ------------------------ */
             if(card1.isMouseHovering){
                 ctx.fillStyle = "grey"
                 if(recentFlippedNum===2){
