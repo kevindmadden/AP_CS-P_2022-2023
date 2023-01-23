@@ -18,11 +18,26 @@
         let card1 = cardFactory("red",10, 10)
         let card2 = cardFactory("yellow",100,10)
         let card3 = cardFactory("red",190,10)
+        let card4 = cardFactory("green",280, 10)
+        let card5 = cardFactory("green",370, 10)
+        let card6 = cardFactory("blue",10, 200)
+        let card7 = cardFactory("blue",100, 200)
+        let card8 = cardFactory("brown",190, 200)
+        let card9 = cardFactory("pink",280, 200)
+        let card10 = cardFactory("pink",370, 200)
+
 
         let cards = []
         cards.push(card1)
         cards.push(card2)
         cards.push(card3)
+        cards.push(card4)
+        cards.push(card5)
+        cards.push(card6)
+        cards.push(card7)
+        cards.push(card8)
+        cards.push(card9)
+        cards.push(card10)
 
 
         function cardFactory(color, xPos, yPos){
@@ -75,7 +90,8 @@
                 }
             }
 
-            //if recentFlippedNum is 2, then flip those two cards back over if they do not match
+            //It isn't working when we flip over two matching cards and then
+            // flip over two non-matching cards
             if(recentFlippedNum === 2){
                 let tempCard1 = tempListOfTwoCards[0]
                 let tempCard2 = tempListOfTwoCards[1]
@@ -87,7 +103,14 @@
                     recentFlippedNum = 0
                 }
                 if(tempCard1.color !== tempCard2.color){
-                    if(!card1.isMouseHovering && !card2.isMouseHovering && !card3.isMouseHovering){
+                    let isMouseHoveringOverAnyCard = false
+                    for(let card of cards){
+                        if(card.isMouseHovering){
+                            isMouseHoveringOverAnyCard = true
+                        }
+                    }
+
+                    if(!isMouseHoveringOverAnyCard){
                         tempCard1.isFlippedOver = false
                         tempCard2.isFlippedOver = false
                         recentFlippedNum = 0
@@ -105,39 +128,18 @@
             /* ------------------------
                     Drawing
                ------------------------ */
-
-            if(!card1.isMouseHovering){
-                ctx.fillStyle = "black"
+            for(let card of cards){
+                if(!card.isMouseHovering){
+                    ctx.fillStyle = "black"
+                }
+                if(card.isMouseHovering){
+                    ctx.fillStyle = "grey"
+                }
+                if(card.isFlippedOver){
+                    ctx.fillStyle = card.color
+                }
+                ctx.fillRect(card.xPos, card.yPos, card.width, card.height)
             }
-            if(card1.isFlippedOver){
-                ctx.fillStyle = card1.color
-            }
-            ctx.fillRect(card1.xPos, card1.yPos, card1.width, card1.height)
-            if(card2.isMouseHovering){
-                ctx.fillStyle = "grey"
-            }
-            if(!card2.isMouseHovering){
-                ctx.fillStyle = "black"
-            }
-            if(card2.isFlippedOver){
-                ctx.fillStyle = card2.color
-            }
-            ctx.fillRect(card2.xPos, card2.yPos, card2.width, card2.height)
-            if(card3.isMouseHovering){
-                ctx.fillStyle = "grey"
-            }
-            if(!card3.isMouseHovering){
-                ctx.fillStyle = "black"
-            }
-            if(card3.isFlippedOver){
-                ctx.fillStyle = card3.color
-            }
-            ctx.fillRect(card3.xPos, card3.yPos, card3.width, card3.height)
-
-
-
-
-
 
             window.requestAnimationFrame(gameLoop)
         }
