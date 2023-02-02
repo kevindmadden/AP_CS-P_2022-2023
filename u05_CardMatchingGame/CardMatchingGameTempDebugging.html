@@ -12,59 +12,47 @@
 
         let onClick = false
 
-        /*
-        if a card is flippedOver, add it to a list of cards just flipped over
-        if a second card is flipped over, add it to the list of cards just flipped over
-        check the two cards in the list
-        --if the color of those two cards matches, then update the wasMatchFound
-        property to be true
-        --when the mouse leaves the card it is hovering over, delete both items from the list
-
-        if 2 cards are flipped over and match has not been found, then flip
-        those two cards back over
-
-         recentFlippedNum that we've just flipped
-         recentFlippedNum=recentFlippedNum+1 click on one card
-         recentFlippedNum=recentFlippedNum+1 click one a second card
-         recentFlippedNum=0 when the mouse leaves the card it's currently hovering over
-
-         */
-
-
-
         let tempListOfTwoCards = []
         let recentFlippedNum = 0
-        let card1 = {
-            isFlippedOver : false,
-            color : "red",
-            wasMatchFound : false,
-            isMouseHovering : false,
-            xPos : 10,
-            yPos : 10,
-            width : 50,
-            height : 100,
-        }
-        let card2 = {
-            isFlippedOver : false,
-            color : "yellow",
-            wasMatchFound : false,
-            isMouseHovering : false,
-            xPos : 100,
-            yPos : 10,
-            width : 50,
-            height : 100,
-        }
-        let card3 = {
-            isFlippedOver : false,
-            color : "red",
-            wasMatchFound : false,
-            isMouseHovering : false,
-            xPos : 200,
-            yPos : 10,
-            width : 50,
-            height : 100,
-        }
 
+        let card1 = cardFactory("red",10, 10)
+        let card2 = cardFactory("yellow",100,10)
+        let card3 = cardFactory("red",190,10)
+        let card4 = cardFactory("green",280, 10)
+        let card5 = cardFactory("green",370, 10)
+        let card6 = cardFactory("blue",10, 200)
+        let card7 = cardFactory("blue",100, 200)
+        let card8 = cardFactory("brown",190, 200)
+        let card9 = cardFactory("pink",280, 200)
+        let card10 = cardFactory("pink",370, 200)
+
+
+        let cards = []
+        cards.push(card1)
+        cards.push(card2)
+        cards.push(card3)
+        cards.push(card4)
+        cards.push(card5)
+        cards.push(card6)
+        cards.push(card7)
+        cards.push(card8)
+        cards.push(card9)
+        cards.push(card10)
+
+
+        function cardFactory(color, xPos, yPos){
+            let card = {
+                isFlippedOver : false,
+                color : color,
+                wasMatchFound : false,
+                isMouseHovering : false,
+                xPos : xPos,
+                yPos : yPos,
+                width : 50,
+                height : 100,
+            }
+            return card
+        }
 
         let mouseRectangle = {
             xPos : 0,
@@ -85,65 +73,80 @@
             /* ------------------------
                 Logic
              ------------------------ */
-
-            if(didRectanglesCollide(card1, mouseRectangle)){
-                card1.isMouseHovering = true
-            }else{
-                card1.isMouseHovering = false
-            }
-            if(didRectanglesCollide(card2, mouseRectangle)){
-                card2.isMouseHovering = true
-            }else{
-                card2.isMouseHovering = false
-            }
-            if(didRectanglesCollide(card3, mouseRectangle)){
-                card3.isMouseHovering = true
-            }else{
-                card3.isMouseHovering = false
+            for(let card of cards){
+                if(didRectanglesCollide(card, mouseRectangle)){
+                    card.isMouseHovering = true
+                }else{
+                    card.isMouseHovering = false
+                }
             }
 
+            for(let card of cards){
 
+                if(didRectanglesCollide(card, mouseRectangle) && onClick){
+                   // console.log("here")
+                    card.isFlippedOver = true
+                    onClick = false
+                    recentFlippedNum++
+                    tempListOfTwoCards.push(card)
+                }
+                //console.log("recentFlippedNum: "+recentFlippedNum)
+            }
 
-            if(didRectanglesCollide(card1, mouseRectangle) && onClick){
-                card1.isFlippedOver = true
-                onClick = false
-                recentFlippedNum++
-                tempListOfTwoCards.push(card1)
-            }
-            if(didRectanglesCollide(card2, mouseRectangle) && onClick){
-                card2.isFlippedOver = true
-                onClick = false
-                recentFlippedNum++
-                tempListOfTwoCards.push(card2)
-            }
-            if(didRectanglesCollide(card3, mouseRectangle) && onClick){
-                card3.isFlippedOver = true
-                onClick = false
-                recentFlippedNum++
-                tempListOfTwoCards.push(card3)
-            }
-            //if recentFlippedNum is 2, then flip those two cards back over if they do not match
-            if(recentFlippedNum === 2){
+            //It isn't working when we flip over two matching cards and then
+            // flip over two non-matching cards
+            console.log(tempListOfTwoCards.length)
+            if(recentFlippedNum == 2){
                 let tempCard1 = tempListOfTwoCards[0]
                 let tempCard2 = tempListOfTwoCards[1]
-                console.log(tempCard1)
-                console.log(tempCard2)
+               // console.log(tempCard1)
+                //console.log(tempCard2)
                 if( tempCard1.color === tempCard2.color){
                     tempCard1.wasMatchFound = true
                     tempCard2.wasMatchFound = true
                     recentFlippedNum = 0
+                    tempListOfTwoCards.pop()
+                    tempListOfTwoCards.pop()
                 }
-                if(tempCard1.color !== tempCard2.color){
-                    if(!card1.isMouseHovering && !card2.isMouseHovering && !card3.isMouseHovering){
+                for(let card of tempListOfTwoCards){
+                    //console.log("--------------")
+                    //console.log(card)
+                    //console.log("--------------")
+                }
+
+                if (!card1.isMouseHovering && !card2.isMouseHovering && !card3.isMouseHovering && !card4.isMouseHovering && !card5.isMouseHovering && !card6.isMouseHovering && !card7.isMouseHovering && !card8.isMouseHovering && !card9.isMouseHovering && !card10.isMouseHovering) {
+                    console.log("here")
+                    if( tempCard1.color === tempCard2.color){
+                        tempCard1.wasMatchFound = true
+                        tempCard2.wasMatchFound = true
+                    }else{
                         tempCard1.isFlippedOver = false
                         tempCard2.isFlippedOver = false
-                        console.log(card1)
-                        console.log(card2)
-                        console.log(card3)
-                        recentFlippedNum = 0
-                        tempListOfTwoCards.pop()
-                        tempListOfTwoCards.pop()
                     }
+                    recentFlippedNum = 0
+                    tempListOfTwoCards.pop()
+                    tempListOfTwoCards.pop()
+                }
+
+
+                if(tempCard1.color !== tempCard2.color){
+
+
+
+                    /*let isMouseHoveringOverAnyCard = false
+                    for(let card of cards){
+                        if(card.isMouseHovering){
+                            isMouseHoveringOverAnyCard = true
+                        }
+                    }
+
+                    if(!isMouseHoveringOverAnyCard){
+                        tempCard1.isFlippedOver = false
+                        tempCard2.isFlippedOver = false
+                        recentFlippedNum = 0
+                    }
+                    */
+
                 }
 
             }
@@ -155,46 +158,18 @@
             /* ------------------------
                     Drawing
                ------------------------ */
-            if(card1.isMouseHovering){
-                ctx.fillStyle = "grey"
-                if(recentFlippedNum===2){
-                    //check whether the card at tempListOfTwoCards[0] has the same color as the item at tempListOfTwoCards[1]
-                    tempListOfTwoCards.pop()
-                    tempListOfTwoCards.pop()
+            for(let card of cards){
+                if(!card.isMouseHovering){
+                    ctx.fillStyle = "black"
                 }
+                if(card.isMouseHovering){
+                    ctx.fillStyle = "grey"
+                }
+                if(card.isFlippedOver){
+                    ctx.fillStyle = card.color
+                }
+                ctx.fillRect(card.xPos, card.yPos, card.width, card.height)
             }
-            if(!card1.isMouseHovering){
-                ctx.fillStyle = "black"
-            }
-            if(card1.isFlippedOver){
-                ctx.fillStyle = card1.color
-            }
-            ctx.fillRect(card1.xPos, card1.yPos, card1.width, card1.height)
-            if(card2.isMouseHovering){
-                ctx.fillStyle = "grey"
-            }
-            if(!card2.isMouseHovering){
-                ctx.fillStyle = "black"
-            }
-            if(card2.isFlippedOver){
-                ctx.fillStyle = card2.color
-            }
-            ctx.fillRect(card2.xPos, card2.yPos, card2.width, card2.height)
-            if(card3.isMouseHovering){
-                ctx.fillStyle = "grey"
-            }
-            if(!card3.isMouseHovering){
-                ctx.fillStyle = "black"
-            }
-            if(card3.isFlippedOver){
-                ctx.fillStyle = card3.color
-            }
-            ctx.fillRect(card3.xPos, card3.yPos, card3.width, card3.height)
-
-
-
-
-
 
             window.requestAnimationFrame(gameLoop)
         }
