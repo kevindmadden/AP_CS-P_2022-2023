@@ -61,6 +61,15 @@
     pipes.push(pipeFactory(500))
     pipes.push(pipeFactory(800))
 
+    let startButton = {
+      xPos: 175,
+      yPos: 225,
+      width: 150,
+      height: 50,
+    }
+    let isMenuShowing = true
+    let onClick = false
+
     let prevTimeStamp = 0
     window.requestAnimationFrame(gameLoop)
     function gameLoop(currentTimeStamp) {
@@ -68,62 +77,85 @@
       prevTimeStamp = currentTimeStamp
       ctx.clearRect(0, 0, 500, 500)
 
-      bird.yPos = bird.yPos + bird.yVel*timeElapsed
-
-      //Logic for generating new pipes
-      for(let pipe of pipes){
-        if(pipe.topPipe.xPos < 0 && pipe.isAlive){
-          pipes.push(pipeFactory(800))
-          pipe.isAlive = false
-        }
+      let mouse = {
+        xPos: xCoord,
+        yPos: yCoord,
+        width: 1,
+        height: 1,
       }
-
-      //The below for-loop replaces the above four lines.
-      for(let pipe of pipes){
-        pipe.topPipe.xPos = pipe.topPipe.xPos + pipeVel*timeElapsed
-        pipe.bottomPipe.xPos = pipe.bottomPipe.xPos + pipeVel*timeElapsed
-      }
-
-
-
-      if(kbInput.up.isPressed){
-        bird.yVel = -100
-      }else{
-        bird.yVel = 100
-      }
-
 
       ctx.fillStyle = "blue"
-      //ctx.fillRect(bird.xPos, bird.yPos, bird.width, bird.height)
-      ctx.drawImage(birdImage, bird.xPos, bird.yPos,bird.width, bird.height)
+      if(isMenuShowing){
+        if(didRectanglesCollide(startButton, mouse)){
+          if(onClick){
+            isMenuShowing = false
+            onClick = false
+          }
+          ctx.fillStyle = "rgb(34,218,184)"
+        }
+        onClick = false
 
-      //Pipes
-      ctx.fillStyle = "yellow"
-
-      for(let pipe of pipes){
-        ctx.fillRect(pipe.topPipe.xPos, pipe.topPipe.yPos, pipe.topPipe.width, pipe.topPipe.height)
-        ctx.fillRect(pipe.bottomPipe.xPos, pipe.bottomPipe.yPos, pipe.bottomPipe.width, pipe.bottomPipe.height)
-      }
+        ctx.fillRect(startButton.xPos, startButton.yPos, startButton.width, startButton.height)
+        ctx.fillStyle = "white"
+        ctx.font = "30px Arial"
+        ctx.fillText("START",200,260)
 
 
+      }else {
+        bird.yPos = bird.yPos + bird.yVel * timeElapsed
 
-      //Ground
-      ctx.fillStyle = "green"
-      ctx.fillRect(ground.xPos, ground.yPos, ground.width, ground.height)
+        //Logic for generating new pipes
+        for (let pipe of pipes) {
+          if (pipe.topPipe.xPos < 0 && pipe.isAlive) {
+            pipes.push(pipeFactory(800))
+            pipe.isAlive = false
+          }
+        }
 
-      for(let pipe of pipes){
-        if(didRectanglesCollide(bird,pipe.topPipe)){
+        //The below for-loop replaces the above four lines.
+        for (let pipe of pipes) {
+          pipe.topPipe.xPos = pipe.topPipe.xPos + pipeVel * timeElapsed
+          pipe.bottomPipe.xPos = pipe.bottomPipe.xPos + pipeVel * timeElapsed
+        }
+
+
+        if (kbInput.up.isPressed) {
+          bird.yVel = -100
+        } else {
+          bird.yVel = 100
+        }
+
+
+        ctx.fillStyle = "blue"
+        //ctx.fillRect(bird.xPos, bird.yPos, bird.width, bird.height)
+        ctx.drawImage(birdImage, bird.xPos, bird.yPos, bird.width, bird.height)
+
+        //Pipes
+        ctx.fillStyle = "yellow"
+
+        for (let pipe of pipes) {
+          ctx.fillRect(pipe.topPipe.xPos, pipe.topPipe.yPos, pipe.topPipe.width, pipe.topPipe.height)
+          ctx.fillRect(pipe.bottomPipe.xPos, pipe.bottomPipe.yPos, pipe.bottomPipe.width, pipe.bottomPipe.height)
+        }
+
+
+        //Ground
+        ctx.fillStyle = "green"
+        ctx.fillRect(ground.xPos, ground.yPos, ground.width, ground.height)
+
+        for (let pipe of pipes) {
+          if (didRectanglesCollide(bird, pipe.topPipe)) {
+            showGameOverMessage()
+          }
+          if (didRectanglesCollide(bird, pipe.bottomPipe)) {
+            showGameOverMessage()
+          }
+        }
+
+        if (didRectanglesCollide(bird, ground)) {
           showGameOverMessage()
         }
-        if(didRectanglesCollide(bird, pipe.bottomPipe)){
-          showGameOverMessage()
-        }
       }
-
-      if(didRectanglesCollide(bird, ground)){
-        showGameOverMessage()
-      }
-
       window.requestAnimationFrame(gameLoop)
     }
 
@@ -238,6 +270,9 @@
 
     canvas.addEventListener('mousemove', function(e) { getCursorPosition(canvas, e)})
 
+    addEventListener('click', (event) => {
+      onClick = true
+    });
   </script>
 </head>
 <body></body>
