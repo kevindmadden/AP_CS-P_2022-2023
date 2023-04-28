@@ -1,152 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
+<body style="background-color: lavender;"></body>
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
-  <canvas id="canvas" width="500px" height="500px" style="border: 1px solid black;background-color: aqua" tabindex="1" autofocus></canvas>
+  <title>World's Hardest Game</title>
+  <canvas id="canvas" width="500px" height="500px" style="border: 1px solid black;" tabindex="1" autofocus></canvas>
   <p id="coordinateValues">Coordinates - x: 0, y: 0</p>
   <script>
     //Canvas API: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
 
-    let bird = {
+
+
+    let block = {
+      xVel: 0,
+      xPos: 75,
+      yPos: 237,
+      yVel: 0,
+      width: 15,
+      height: 15,
+    }
+    let obstacle = {
       xPos: 250,
-      yPos: 50,
-      width: 40,
-      height: 20,
-      yVel: 100,
+      yPos: 200,
+      xVel: 0,
+      yVel: 0,
+      width: 10,
+      height: 100,
+    }
+    let obstacle2= {
+      xPos: 200,
+      yPos: 250,
+      xVel: 0,
+      yVel: 0,
+      width: 110,
+      height: 10,
+    }
+    let start = {
+      xPos: 25,
+      yPos: 200,
+      xVel: 0,
+      yVel: 0,
+      width: 80,
+      height: 100,
+    }
+    let ending = {
+      xPos: 400,
+      yPos: 200,
+      xVel: 0,
+      yVel: 0,
+      width: 75,
+      height: 100,
+    }
+    let randomy=Math.random()*200
+    let randomx= Math.random()*100
+    let coin1 = coinFactory(randomx,randomy)
+    let coin2 = coinFactory(randomx,randomy)
+    let coin3 = coinFactory(randomx,randomy)
+    let coin4 = coinFactory(randomx,randomy)
+    let coin5 = coinFactory(randomx,randomy)
+
+
+
+    let coins = []
+    coins.push(coin1)
+    coins.push(coin2)
+    coins.push(coin3)
+    coins.push(coin4)
+    coins.push(coin5)
+
+
+
+    function coinFactory(xPos,yPos){
+      let coin = {
+        xPos: xPos +300,
+        yPos: yPos + 300,
+        width: 25,
+        height: 25,
+        color:"yellow",
+        gameStarted:false
+      }
+      return coin
     }
 
-    let ground = {
-      xPos: 0,
-      yPos: 420,
-      width: 500,
-      height: 80,
-    }
 
-
-
-    let pipeVel = -200
-
-    function pipeFactory(startXpos){
-      let randomPipeSize = Math.random()*300
-      let pipeSection =
-              {
-                topPipe : {
-                  xPos: startXpos,
-                  yPos: 0,
-                  width: 50,
-                  height: 100+randomPipeSize,
-                },
-                bottomPipe : {
-                  xPos: startXpos,
-                  yPos: 100+randomPipeSize + 200,
-                  width: 50,
-                  height: 500,
-                },
-                isAlive: true,
-              }
-      return pipeSection
-    }
-
-    let pipes = []
-    let pipeSection1 = pipeFactory(500)
-    pipes.push(pipeSection1)
-
-    pipes.push(pipeFactory(500))
-    pipes.push(pipeFactory(700))
-    pipes.push(pipeFactory(900))
-    pipes.push(pipeFactory(1100))
-    pipes.push(pipeFactory(1300))
-    pipes.push(pipeFactory(1500))
-    pipes.push(pipeFactory(1700))
-    pipes.push(pipeFactory(1900))
-
+    obstacle.xVel = -65
+    obstacle2.yVel = 65
     let prevTimeStamp = 0
     window.requestAnimationFrame(gameLoop)
     function gameLoop(currentTimeStamp) {
       let timeElapsed = (currentTimeStamp - prevTimeStamp) / 1000
       prevTimeStamp = currentTimeStamp
       ctx.clearRect(0, 0, 500, 500)
+      block.yPos = block.yPos + block.yVel * timeElapsed
+      block.xPos = block.xPos + block.xVel * timeElapsed
+      obstacle.xPos = obstacle.xPos + obstacle.xVel * timeElapsed
+      obstacle2.yPos = obstacle2.yPos + obstacle2.yVel * timeElapsed
 
-      bird.yPos = bird.yPos + bird.yVel*timeElapsed
 
-      //Logic for generating new pipes
-      for(let pipe of pipes){
-        if(pipe.bottomPipe.xPos < 0 && pipe.isAlive){
-          pipes.push(pipeFactory(1900))
-          pipe.isAlive = false
-        }
+
+
+
+
+      if(obstacle.xPos >390){
+        obstacle.xVel = -65
+      }
+      if(obstacle.xPos < 125){
+        obstacle.xVel = 65
+      }
+      if(obstacle2.yPos < 125){
+        obstacle2.yVel = 65
+      }
+      if(obstacle2.yPos > 365){
+        obstacle2.yVel = -65
       }
 
-      //The below for-loop replaces the above four lines.
-      for(let pipe of pipes){
-
-        pipe.bottomPipe.xPos = pipe.bottomPipe.xPos + pipeVel*timeElapsed
+      if(kbInput.left.isPressed){
+        block.xVel = -50
       }
-
-
-
+      if(kbInput.right.isPressed){
+        block.xVel = 50
+      }
+      if(kbInput.left.isPressed && kbInput.right.isPressed){
+        block.xVel = 0
+      }
+      if(!kbInput.left.isPressed && !kbInput.right.isPressed){
+        block.xVel = 0
+      }
       if(kbInput.up.isPressed){
-        bird.yVel = -450
-      }else{
-        bird.yVel = 450
+        block.yVel = -50
+      }
+      if(kbInput.down.isPressed){
+        block.yVel = 50
+      }
+      if(kbInput.down.isPressed && kbInput.up.isPressed){
+        block.yVel = 0
+      }
+      if(!kbInput.down.isPressed && !kbInput.up.isPressed){
+        block.yVel = 0
+      }
+
+      ctx.beginPath()
+        ctx.moveTo(100,200)
+        ctx.lineTo(100,300)
+        ctx.closePath()
+
+        ctx.lineWidth = 3;
+        ctx.beginPath()
+        ctx.moveTo(25, 200)
+        ctx.lineTo(100,200)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(25,300)
+        ctx.lineTo(100,300)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(25,200)
+        ctx.lineTo(25,300)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(100,300)
+        ctx.lineTo(100,375)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(100,375)
+        ctx.lineTo(400,375)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(400,300)
+        ctx.lineTo(475,300)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(400,300)
+        ctx.lineTo(400,375)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(475,300)
+        ctx.lineTo(475,200)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(475,200)
+        ctx.lineTo(400,200)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(400,200)
+        ctx.lineTo(400,125)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(400,125)
+        ctx.lineTo(100,125)
+        ctx.closePath()
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(100,125)
+        ctx.lineTo(100,200)
+        ctx.closePath()
+        ctx.stroke()
+
+
+      ctx.fillStyle = "lightgreen"
+      ctx.fillRect(start.xPos, start.yPos, start.width, start.height)
+
+      ctx.fillStyle= "lightgreen"
+      ctx.fillRect(ending.xPos, ending.yPos, ending.width, ending.height)
+
+      ctx.fillStyle= "red"
+      ctx.fillRect(block.xPos, block.yPos, block.width, block.height)
+
+      ctx.fillStyle= "black"
+      ctx.fillRect(obstacle.xPos, obstacle.yPos, obstacle.width, obstacle.height)
+
+      //ctx.fillRect(coins.xPos,coins.yPos,coins.width, coins.height)
+
+
+      if(didRectanglesCollide(block,obstacle)){
+        showGameOverMessage()
+      }
+      if(didRectanglesCollide(block,obstacle2)){
+        showGameOverMessage()
       }
 
 
-      ctx.fillStyle = "yellow"
-      ctx.fillRect(bird.xPos, bird.yPos, bird.width, bird.height)
-
-
-      ctx.fillStyle = "white"
-
-      for(let pipe of pipes){
-        ctx.fillRect(pipe.bottomPipe.xPos, pipe.bottomPipe.yPos, pipe.bottomPipe.width, pipe.bottomPipe.height)
-      }
 
 
 
-
-      ctx.fillStyle = "lime"
-      ctx.fillRect(ground.xPos, ground.yPos, ground.width, ground.height)
-
-      for(let pipe of pipes){
-        if(didRectanglesCollide(bird,pipe.topPipe)){
-          showGameOverMessage()
-        }
-        if(didRectanglesCollide(bird, pipe.bottomPipe)){
-          showGameOverMessage()
-        }
-      }
-
-      if(didRectanglesCollide(bird, ground)){
-        bird.yPos = 400
-      }
-
-
-
-
-
-
+      ctx.fillRect(obstacle.xPos,obstacle.yPos,obstacle.width,obstacle.height)
+      ctx.fillRect(obstacle2.xPos,obstacle2.yPos,obstacle2.width,obstacle2.height)
       window.requestAnimationFrame(gameLoop)
     }
 
 
-
-
-
-    function showGameOverMessage(){
-      ctx.font = "30px Arial"
-      ctx.fillText("LOST", 250, 250)
-    }
-
-
-
-
-
-
-
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // Keyboard Input
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     canvas.addEventListener('keydown', keyHandler)
     canvas.addEventListener('keyup', keyHandler)
@@ -171,7 +268,7 @@
     }
 
     function keyHandler(event) {
-      event.preventDefault()
+      event.preventDefault() //prevents the keys that you press from performing their default action in your internet browser (for ex: when you press the down arrow key, the browser window will not scroll down)
       let type = event.type
       let isPressed = false
       if(type==="keydown"){
@@ -191,7 +288,7 @@
       }
     }
 
-
+    //Collision Detection
     function didCirclesCollide(circle1, circle2){
       let distance = Math.sqrt(Math.pow((circle1.xPos-circle2.xPos),2) + Math.pow((circle1.yPos-circle2.yPos),2))
       if(distance < circle1.radius+circle2.radius){
@@ -200,7 +297,7 @@
       return false
     }
 
-    function didRectanglesCollide(rect1, rect2){
+    function didRectanglesCollide(rect1, rect2){ //https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
       if (rect1.xPos < rect2.xPos + rect2.width &&
               rect1.xPos + rect1.width > rect2.xPos &&
               rect1.yPos < rect2.yPos + rect2.height &&
@@ -211,7 +308,7 @@
       }
     }
 
-    function didRectangleCircleCollide(rect, circle){
+    function didRectangleCircleCollide(rect, circle){ //https://stackoverflow.com/questions/21089959/detecting-collision-of-rectangle-with-circle
       let rect_x = rect.xPos
       let rect_y = rect.yPos
       let rect_w = rect.width
@@ -235,7 +332,6 @@
 
 
 
-
     let xCoord = 0
     let yCoord = 0
     function getCursorPosition(canvas, event) {
@@ -247,7 +343,15 @@
 
     canvas.addEventListener('mousemove', function(e) { getCursorPosition(canvas, e)})
 
+    addEventListener('click', (event) => {});
+
+    onclick = (event) => { }
+    function showGameOverMessage() {
+      ctx.font = "30px Arial"
+      ctx.fillText("Game Over", 200, 250)
+    }
+
+
   </script>
 </head>
-<body></body>
 </html>

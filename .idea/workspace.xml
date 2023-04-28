@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca8c503-a103-4a13-a410-baee59601785" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/u05_CardMatchingGame/MVC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u98_Alg2Stuff/Permutations.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing.html" beforeDir="false" afterPath="$PROJECT_DIR$/Testing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/u05_CardMatchingGame/CardMatchingGame.html" beforeDir="false" afterPath="$PROJECT_DIR$/u05_CardMatchingGame/CardMatchingGame.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +16,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -38,17 +37,19 @@
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Github/AP_CS-P_2022-2023/u05_CardMatchingGame&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Github/AP_CS-P_2022-2023/u98_Alg2Stuff&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Github\AP_CS-P_2022-2023\u98_Alg2Stuff" />
       <recent name="C:\Github\AP_CS-P_2022-2023\u05_CardMatchingGame" />
       <recent name="C:\Github\AP_CS-P_2022-2023\u04_IntroToAnimation" />
-      <recent name="C:\Github\AP_CS-P_2022-2023\u98_Alg2Stuff" />
       <recent name="C:\Github\AP_CS-P_2022-2023" />
       <recent name="C:\Github\AP_CS-P_2022-2023\u99_Testing" />
     </key>
@@ -57,7 +58,7 @@
       <recent name="C:\Github\AP_CS-P_2022-2023\u01_HTML-CSS" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RectangleMain">
+  <component name="RunManager" selected="JavaScript Debug.CardMatchingGame.html">
     <configuration name="RectangleMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -66,6 +67,9 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="CardMatchingGame.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AP_CS-P_2022-2023/u05_CardMatchingGame/CardMatchingGame.html" useBuiltInWebServerPort="true">
+      <method v="2" />
     </configuration>
     <configuration name="quick" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AP_CS-P_2022-2023" />
@@ -91,7 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.quick" />
+        <item itemvalue="JavaScript Debug.CardMatchingGame.html" />
       </list>
     </recent_temporary>
   </component>
@@ -138,11 +142,27 @@
       <workItem from="1673291792438" duration="590000" />
       <workItem from="1673444247837" duration="4469000" />
       <workItem from="1673454801445" duration="741000" />
-      <workItem from="1673531281759" duration="2011000" />
+      <workItem from="1673531281759" duration="29461000" />
+      <workItem from="1674487768002" duration="9229000" />
+      <workItem from="1675174636799" duration="1752000" />
+      <workItem from="1675277493295" duration="1154000" />
+      <workItem from="1675780952038" duration="6631000" />
+      <workItem from="1677677720014" duration="3748000" />
+      <workItem from="1677682515596" duration="599000" />
+      <workItem from="1677688940815" duration="840000" />
+      <workItem from="1679490606256" duration="917000" />
+      <workItem from="1680543593031" duration="1185000" />
+      <workItem from="1681217768667" duration="1831000" />
+      <workItem from="1681932760247" duration="1371000" />
+      <workItem from="1682608545818" duration="671000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
