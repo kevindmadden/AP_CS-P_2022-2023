@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca8c503-a103-4a13-a410-baee59601785" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/u06_Advanced/NormalForLoops.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/u06_Advanced/DoubleForLoops.html" beforeDir="false" afterPath="$PROJECT_DIR$/u06_Advanced/DoubleForLoops.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/u98_Alg2Stuff/Permutations.html" beforeDir="false" afterPath="$PROJECT_DIR$/u98_Alg2Stuff/Permutations.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +153,7 @@
       <workItem from="1681217768667" duration="1831000" />
       <workItem from="1681932760247" duration="1371000" />
       <workItem from="1682608545818" duration="11480000" />
-      <workItem from="1684500968503" duration="1156000" />
+      <workItem from="1684500968503" duration="1232000" />
     </task>
     <servers />
   </component>
