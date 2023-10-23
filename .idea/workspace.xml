@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca8c503-a103-4a13-a410-baee59601785" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/u06_Advanced/DoubleForLoops.html" beforeDir="false" afterPath="$PROJECT_DIR$/u06_Advanced/DoubleForLoops.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u04_IntroToAnimation/FlappyBird.html" beforeDir="false" afterPath="$PROJECT_DIR$/u04_IntroToAnimation/FlappyBird.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Github/AP_CS-P_2022-2023/u98_Alg2Stuff&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/KevinMadden/Downloads/APCSP&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -153,7 +154,14 @@
       <workItem from="1681217768667" duration="1831000" />
       <workItem from="1681932760247" duration="1371000" />
       <workItem from="1682608545818" duration="11480000" />
-      <workItem from="1684500968503" duration="1232000" />
+      <workItem from="1684500968503" duration="3528000" />
+      <workItem from="1695299793658" duration="521000" />
+      <workItem from="1695389149096" duration="1807000" />
+      <workItem from="1695818817806" duration="2028000" />
+      <workItem from="1696423369168" duration="633000" />
+      <workItem from="1696596846829" duration="690000" />
+      <workItem from="1696965270273" duration="593000" />
+      <workItem from="1697114547080" duration="2417000" />
     </task>
     <servers />
   </component>
